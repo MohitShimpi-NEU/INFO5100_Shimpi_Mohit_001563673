@@ -13,33 +13,33 @@ import java.util.Scanner;
  */
 public class VitalSigns {
     
-    float rrate;
-    float hrate;
-    float bloodpressure;
+    int rrate;
+    int hrate;
+    int bloodpressure;
     double kweight;
     double pweight;
 
-    public float getRrate() {
+    public int getRrate() {
         return rrate;
     }
 
-    public void setRrate(float rrate) {
+    public void setRrate(int rrate) {
         this.rrate = rrate;
     }
 
-    public float getHrate() {
+    public int getHrate() {
         return hrate;
     }
 
-    public void setHrate(float hrate) {
+    public void setHrate(int hrate) {
         this.hrate = hrate;
     }
 
-    public float getBloodpressure() {
+    public int getBloodpressure() {
         return bloodpressure;
     }
 
-    public void setBloodpressure(float bloodpressure) {
+    public void setBloodpressure(int bloodpressure) {
         this.bloodpressure = bloodpressure;
     }
 
@@ -66,19 +66,19 @@ public class VitalSigns {
         System.out.println("Enter Vital Signs:-");
         System.out.println("-------------------------------------------------------------------------------------------");
         System.out.println("-> Enter Respiratory Rate-");
-        rrate = input.nextFloat();
+        rrate = input.nextInt();
         
         System.out.println("-> Enter Heart Rate-");
-        hrate = input.nextFloat();
+        hrate = input.nextInt();
         
         System.out.println("-> Enter Systolic Blood Pressure-");
-        bloodpressure = input.nextFloat();
+        bloodpressure = input.nextInt();
         
         System.out.println("-> Enter Weight in Kilos-");
-        kweight = input.nextFloat();
+        kweight = input.nextDouble();
         
         System.out.println("-> Enter Weight in Pounds-");
-        pweight = input.nextFloat();
+        pweight = input.nextDouble();
         
         
         

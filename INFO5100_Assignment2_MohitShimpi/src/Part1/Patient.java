@@ -154,7 +154,7 @@ public class Patient
                 System.out.println("-------------------------------------------------------------------------------------------");
                 System.out.println("Patient Status:-");
                 System.out.println("-------------------------------------------------------------------------------------------");
-                System.out.println("Patient has Bradycardia which is result of sloer heart rate- CRITICAL CONDITION");
+                System.out.println("Patient has Bradycardia which is result of slow heart rate- CRITICAL CONDITION");
                 return false;
             }
             else
@@ -195,7 +195,7 @@ public class Patient
                 System.out.println("-------------------------------------------------------------------------------------------");
                 System.out.println("Patient Status:-");
                 System.out.println("-------------------------------------------------------------------------------------------");
-                System.out.println("Patient has Bradycardia which is result of sloer heart rate- CRITICAL CONDITION");
+                System.out.println("Patient has Bradycardia which is result of slow heart rate- CRITICAL CONDITION");
                 return false;
             }
             else
@@ -236,7 +236,7 @@ public class Patient
                 System.out.println("-------------------------------------------------------------------------------------------");
                 System.out.println("Patient Status:-");
                 System.out.println("-------------------------------------------------------------------------------------------");
-                System.out.println("Patient has Bradycardia which is result of sloer heart rate- CRITICAL CONDITION");
+                System.out.println("Patient has Bradycardia which is result of slow heart rate- CRITICAL CONDITION");
                 return false;
             }
             else
@@ -277,7 +277,7 @@ public class Patient
                 System.out.println("-------------------------------------------------------------------------------------------");
                 System.out.println("Patient Status:-");
                 System.out.println("-------------------------------------------------------------------------------------------");
-                System.out.println("Patient has Bradycardia which is result of sloer heart rate- CRITICAL CONDITION");
+                System.out.println("Patient has Bradycardia which is result of slow heart rate- CRITICAL CONDITION");
                 return false;
             }
             else
@@ -318,7 +318,7 @@ public class Patient
                 System.out.println("-------------------------------------------------------------------------------------------");
                 System.out.println("Patient Status:-");
                 System.out.println("-------------------------------------------------------------------------------------------");
-                System.out.println("Patient has Bradycardia which is result of sloer heart rate- CRITICAL CONDITION");
+                System.out.println("Patient has Bradycardia which is result of slow heart rate- CRITICAL CONDITION");
                 return false;
             }
             else
@@ -407,7 +407,7 @@ public class Patient
                     
                 case 2:
                     System.out.println("");
-                    System.out.println("Test Case 1: Normal condition for Toddler");
+                    System.out.println("-> Test Case 1: Normal condition for Toddler");
                     InbultTestCase test = new InbultTestCase();
                     boolean b =  test.isPatientNormal("Toddler",25,85,85,11,24);
                     if(b)
@@ -424,7 +424,7 @@ public class Patient
                     }  
                     
                     System.out.println("");
-                    System.out.println("Test Case 2: Abormal condition for infant with fever and stress");
+                    System.out.println("-> Test Case 2: Abormal condition for infant with fever and stress");
                     boolean c =  test.isPatientNormal("Infant",35,145,105,2.5,4.5);
                     if(c)
                     {

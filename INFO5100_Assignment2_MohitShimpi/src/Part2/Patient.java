@@ -10,6 +10,7 @@ package Part2;
  * @author 16177
  */
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Patient 
@@ -123,7 +124,7 @@ public class Patient
           
     }
 
-    public  boolean isPatientNormal(float rrate, float hrate, float bp, double kg, double pounds)
+    public  boolean isPatientNormal(int rrate, int hrate, int bp, double kg, double pounds)
     {
         
         if(age==1)
@@ -154,7 +155,7 @@ public class Patient
                 System.out.println("-------------------------------------------------------------------------------------------");
                 System.out.println("Patient Status:-");
                 System.out.println("-------------------------------------------------------------------------------------------");
-                System.out.println("Patient has Bradycardia which is result of sloer heart rate- CRITICAL CONDITION");
+                System.out.println("Patient has Bradycardia which is result of slow heart rate- CRITICAL CONDITION");
                 return false;
             }
             else
@@ -195,7 +196,7 @@ public class Patient
                 System.out.println("-------------------------------------------------------------------------------------------");
                 System.out.println("Patient Status:-");
                 System.out.println("-------------------------------------------------------------------------------------------");
-                System.out.println("Patient has Bradycardia which is result of sloer heart rate- CRITICAL CONDITION");
+                System.out.println("Patient has Bradycardia which is result of slow heart rate- CRITICAL CONDITION");
                 return false;
             }
             else
@@ -236,7 +237,7 @@ public class Patient
                 System.out.println("-------------------------------------------------------------------------------------------");
                 System.out.println("Patient Status:-");
                 System.out.println("-------------------------------------------------------------------------------------------");
-                System.out.println("Patient has Bradycardia which is result of sloer heart rate- CRITICAL CONDITION");
+                System.out.println("Patient has Bradycardia which is result of slow heart rate- CRITICAL CONDITION");
                 return false;
             }
             else
@@ -277,7 +278,7 @@ public class Patient
                 System.out.println("-------------------------------------------------------------------------------------------");
                 System.out.println("Patient Status:-");
                 System.out.println("-------------------------------------------------------------------------------------------");
-                System.out.println("Patient has Bradycardia which is result of sloer heart rate- CRITICAL CONDITION");
+                System.out.println("Patient has Bradycardia which is result of slow heart rate- CRITICAL CONDITION");
                 return false;
             }
             else
@@ -318,7 +319,7 @@ public class Patient
                 System.out.println("-------------------------------------------------------------------------------------------");
                 System.out.println("Patient Status:-");
                 System.out.println("-------------------------------------------------------------------------------------------");
-                System.out.println("Patient has Bradycardia which is result of sloer heart rate- CRITICAL CONDITION");
+                System.out.println("Patient has Bradycardia which is result of slow heart rate- CRITICAL CONDITION");
                 return false;
             }
             else
@@ -361,35 +362,39 @@ public class Patient
     public static void main(String [] args)
     { 
         Scanner sc = new Scanner(System.in);
+        
         Patient PObject = new Patient();
         VitalSigns VSObject = new VitalSigns();
+        
+        PObject.CollectPatientInfo();
+        System.out.println("");
+ 
+        VSObject.getInput();
+
+        
+        ArrayList list = new ArrayList();
         
         while(true)
         {
             System.out.println("");
         
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");                   
-            System.out.println("Enter a choice:-");
-            System.out.println("1) Manual input test case");
-            System.out.println("2) Inbuilt test case");
-            System.out.println("3) Exit");
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");             
+            System.out.println("Enter a choice:-");
+            System.out.println("1) Check patient is normal or abnormal");
+            System.out.println("2) View patient information and current vital signs");
+            System.out.println("3) Add new vital signs");
+            System.out.println("4) View history of vital signs");
+            System.out.println("5) ");
+            System.out.println("6) Exit");
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"); 
             int choice =  sc.nextInt();
             
             switch(choice)
             {
                 case 1:
                     
-                    PObject.CollectPatientInfo();
-                    System.out.println("");
- 
-                    VSObject.getInput();
-
-                    System.out.println("___________________________________________________________________________________________");
-                    System.out.println("___________________________________________________________________________________________");
-                    PObject.DisplayInfo();
-                    VSObject.DisplayVS();
-
                     boolean a =  PObject.isPatientNormal(VSObject.getRrate(),VSObject.getHrate(),VSObject.getBloodpressure(),VSObject.getKweight(),VSObject.getPweight());
                     if(a)
                     {
@@ -406,10 +411,45 @@ public class Patient
                     break;
                     
                 case 2:
-                    System.out.println("This is case 2");
+                    PObject.DisplayInfo();
+                    VSObject.DisplayVS();
                     break;
                     
                 case 3:
+                    list.add(VSObject.getRrate());
+                    list.add(VSObject.getHrate());
+                    list.add(VSObject.getBloodpressure());
+                    list.add(VSObject.getKweight());
+                    list.add(VSObject.getPweight());
+                    VSObject.getInput();
+                    break;
+                
+                case 4:
+                    PObject.DisplayInfo();
+                    int n = list.size();
+                    System.out.println("");
+                    System.out.println("History of VITAL SIGNS:-");
+                    System.out.println(list);
+                    int q=0;
+                    for(int i=0;i<(n/5);i++)
+                    { 
+                       
+                        System.out.print("Vital Sign "+ (1+i));
+                        
+                        for(int k=0;k<6;k++)
+                        {
+                            System.out.print("    "+ list.get(k+q));
+                            q++;
+                        }
+                        System.out.println("");
+                    }
+                    //System.out.println("");
+                    break;
+                    
+                case 5:
+                    break;
+                    
+                case 6:
                     System.out.println("");
                     System.out.println("Exiting the application");
                     System.exit(0);
