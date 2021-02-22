@@ -9,7 +9,6 @@ package Part2;
  *
  * @author 16177
  */
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -17,6 +16,15 @@ public class Patient
 {
     String PName;
     int age;
+    String VSString;
+
+    public String getVSString() {
+        return VSString;
+    }
+
+    public void setVSString(String VSString) {
+        this.VSString = VSString;
+    }
         
     public void CollectPatientInfo()
     {
@@ -124,7 +132,7 @@ public class Patient
           
     }
 
-    public  boolean isPatientNormal(int rrate, int hrate, int bp, double kg, double pounds)
+    public  boolean isPatientNormal(double rrate, double hrate, double bp, double kg, double pounds)
     {
         
         if(age==1)
@@ -359,8 +367,200 @@ public class Patient
                  
     }
     
+    public void getInputForVS()
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("");
+        System.out.println("Enter name of below vital sign you want to check is normal");
+        System.out.println("1)Respiratory Rate 2)Heart Rate 3)Blood Pressure 4)Weight in killos 5)Weight in pounds");
+        VSString= input.nextLine();
+        
+    }
+    
+    public boolean isThisVitalSignNormal(String vsign, double n)
+    {
+        VitalSigns VSObject1 = new VitalSigns();
+        
+        if(age==1)
+        {
+
+            if("Respiratory Rate".equals(vsign) && 30<n&&n<50)
+            {
+                    return true;
+            }
+            else if("Heart Rate".equals(vsign) && 120<n&&n<160 )
+            {
+                    return true;
+            }
+            else if("Blood Pressure".equals(vsign) && 50<n&&n<70)
+            {
+                    return true;
+            }
+            else if("Weight in killos".equals(vsign) && 2<n&&n<3)
+            {
+                    return true;
+            }
+            else if("Weight in pounds".equals(vsign) && 4.5<n&&n<7)
+            {
+                    return true;
+            }
+            else
+            {
+                return false;
+            }      
+        }
+        
+        else if(age==2)
+        {
+
+            if("Respiratory Rate".equals(vsign) && 20<n&&n<30)
+            {
+                    return true;
+            }
+            else if("Heart Rate".equals(vsign) && 80<n&&n<140)
+            {
+                    return true;
+            }
+            else if("Blood Pressure".equals(vsign) && 70<n&&n<100)
+            {
+                    return true;
+            }
+            else if("Weight in killos".equals(vsign) && 4<n&&n<10)
+            {
+                    return true;
+            }
+            else if("Weight in pounds".equals(vsign) && 9<n&&n<22)
+            {
+                    return true;
+            }
+            else
+            {
+                return false;
+            }        
+        }
+        
+        else if(age==3)
+        {
+
+            if("Respiratory Rate".equals(vsign) && 20<n&&n<30)
+            {
+                    return true;
+            }
+            else if("Heart Rate".equals(vsign) && 80<n&&n<130)
+            {
+                    return true;
+            }
+            else if("Blood Pressure".equals(vsign) && 80<n&&n<110)
+            {
+                    return true;
+            }
+            else if("Weight in killos".equals(vsign) && 10<n&&n<14)
+            {
+                    return true;
+            }
+            else if("Weight in pounds".equals(vsign) && 22<n&&n<31)
+            {
+                    return true;
+            }
+            else
+            {
+                return false;
+            }        
+        }
+        
+        else if(age==4)
+        {
+
+            if("Respiratory Rate".equals(vsign) && 20<n&&n<30)
+            {
+                    return true;
+            }
+            else if("Heart Rate".equals(vsign) && 80<n&&n<120)
+            {
+                    return true;
+            }
+            else if("Blood Pressure".equals(vsign) && 80<n&&n<110)
+            {
+                    return true;
+            }
+            else if("Weight in killos".equals(vsign) && 14<n&&n<18)
+            {
+                    return true;
+            }
+            else if("Weight in pounds".equals(vsign) && 31<n&&n<40)
+            {
+                    return true;
+            }
+            else
+            {
+                return false;
+            }        
+        }
+        
+        else if(age==5)
+        {
+
+            if("Respiratory Rate".equals(vsign) && 20<n&&n<30)
+            {
+                    return true;
+            }
+            else if("Heart Rate".equals(vsign) && 70<n&&n<110)
+            {
+                    return true;
+            }
+            else if("Blood Pressure".equals(vsign) && 80<n&&n<120)
+            {
+                    return true;
+            }
+            else if("Weight in killos".equals(vsign) && 20<n&&n<42)
+            {
+                    return true;
+            }
+            else if("Weight in pounds".equals(vsign) && 41<n&&n<92)
+            {
+                    return true;
+            }
+            else
+            {
+                return false;
+            }        
+        }
+        
+        else if(age==6)
+        {
+
+            if("Respiratory Rate".equals(vsign) && 12<n&&n<20)
+            {
+                    return true;
+            }
+            else if("Heart Rate".equals(vsign) && 55<n&&n<105)
+            {
+                    return true;
+            }
+            else if("Blood Pressure".equals(vsign) && 110<n&&n<120)
+            {
+                    return true;
+            }
+            else if("Weight in killos".equals(vsign) && n>50)
+            {
+                    return true;
+            }
+            else if("Weight in pounds".equals(vsign) && n>110)
+            {
+                    return true;
+            }
+            else
+            {
+                return false;
+            }        
+        }
+        else
+        return false;
+    }
+    
     public static void main(String [] args)
     { 
+
         Scanner sc = new Scanner(System.in);
         
         Patient PObject = new Patient();
@@ -385,7 +585,7 @@ public class Patient
             System.out.println("2) View patient information and current vital signs");
             System.out.println("3) Add new vital signs");
             System.out.println("4) View history of vital signs");
-            System.out.println("5) ");
+            System.out.println("5) Check if vital sign is normal");
             System.out.println("6) Exit");
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"); 
@@ -429,25 +629,93 @@ public class Patient
                     int n = list.size();
                     System.out.println("");
                     System.out.println("History of VITAL SIGNS:-");
-                    System.out.println(list);
-                    int q=0;
-                    for(int i=0;i<(n/5);i++)
+                    System.out.println("-------------------------------------------------------------------------------------------");
+                    System.out.println("Respiratory Rate    Heart Rate          Blood Pressure      Weight(kg)            Weight(pounds)  ");
+                    for (int i = 0; i < n; ++i) 
                     { 
-                       
-                        System.out.print("Vital Sign "+ (1+i));
-                        
-                        for(int k=0;k<6;k++)
-                        {
-                            System.out.print("    "+ list.get(k+q));
-                            q++;
-                        }
+                        if (i % 5 == 0) 
                         System.out.println("");
+                        System.out.print(list.get(i) + "                   ");
                     }
-                    //System.out.println("");
+                    
+                    
                     break;
                     
                 case 5:
+                    PObject.getInputForVS();
+                    boolean c ;
+                    
+                    String s1= PObject.getVSString();
+
+                    String s2="Respiratory Rate";
+                    String s3="Heart Rate";
+                    String s4="Blood Pressure";
+                    String s5="Weight in killos";
+                    String s6="Weight in pounds";
+                    System.out.println("");
+                    if(s1.equals(s2))
+                    {
+                        c = PObject.isThisVitalSignNormal(PObject.getVSString(),VSObject.getRrate());
+                        if(c)
+                        {
+                            System.out.println("-> Patient "+ PObject.getVSString()+ " is normal");
+                        }
+                        else
+                        {
+                            System.out.println("-> Patient "+ PObject.getVSString()+" is abnormal");
+                        }
+                    }
+                    if(s1.equals(s3))
+                    {
+                        c = PObject.isThisVitalSignNormal(PObject.getVSString(),VSObject.getHrate());
+                        if(c)
+                        {
+                            System.out.println("-> Patient "+ PObject.getVSString()+ " is normal");
+                        }
+                        else
+                        {
+                            System.out.println("-> Patient "+ PObject.getVSString()+" is abnormal");
+                        }
+                    }
+                    if(s1.equals(s4))
+                    {
+                        c = PObject.isThisVitalSignNormal(PObject.getVSString(),VSObject.getBloodpressure());
+                        if(c)
+                        {
+                            System.out.println("-> Patient "+ PObject.getVSString()+ " is normal");
+                        }
+                        else
+                        {
+                            System.out.println("-> Patient "+ PObject.getVSString()+" is abnormal");
+                        }
+                    }
+                    if(s1.equals(s5))
+                    {
+                        c = PObject.isThisVitalSignNormal(PObject.getVSString(), VSObject.getKweight());
+                        if(c)
+                        {
+                            System.out.println("-> Patient "+ PObject.getVSString()+ " is normal");
+                        }
+                        else
+                        {
+                            System.out.println("-> Patient "+ PObject.getVSString()+" is abnormal");
+                        }
+                    }
+                    if(s1.equals(s6))
+                    {
+                        c = PObject.isThisVitalSignNormal(PObject.getVSString(), VSObject.getPweight());
+                        if(c)
+                        {
+                            System.out.println("-> Patient "+ PObject.getVSString()+ " is normal");
+                        }
+                        else
+                        {
+                            System.out.println("-> Patient "+ PObject.getVSString()+" is abnormal");
+                        }
+                    }
+ 
                     break;
+
                     
                 case 6:
                     System.out.println("");

@@ -5,6 +5,9 @@
  */
 package Part2;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -13,33 +16,33 @@ import java.util.Scanner;
  */
 public class VitalSigns {
     
-    int rrate;
-    int hrate;
-    int bloodpressure;
+    double rrate;
+    double hrate;
+    double bloodpressure;
     double kweight;
     double pweight;
 
-    public int getRrate() {
+    public double getRrate() {
         return rrate;
     }
 
-    public void setRrate(int rrate) {
+    public void setRrate(double rrate) {
         this.rrate = rrate;
     }
 
-    public int getHrate() {
+    public double getHrate() {
         return hrate;
     }
 
-    public void setHrate(int hrate) {
+    public void setHrate(double hrate) {
         this.hrate = hrate;
     }
 
-    public int getBloodpressure() {
+    public double getBloodpressure() {
         return bloodpressure;
     }
 
-    public void setBloodpressure(int bloodpressure) {
+    public void setBloodpressure(double bloodpressure) {
         this.bloodpressure = bloodpressure;
     }
 
@@ -47,7 +50,7 @@ public class VitalSigns {
         return kweight;
     }
 
-    public void setKweight(float kweight) {
+    public void setKweight(double kweight) {
         this.kweight = kweight;
     }
 
@@ -55,12 +58,18 @@ public class VitalSigns {
         return pweight;
     }
 
-    public void setPweight(float pweight) {
+    public void setPweight(double pweight) {
         this.pweight = pweight;
     }
     
     public void getInput()
     {
+        LocalDate myObj = LocalDate.now(); 
+
+        LocalTime myObj1 = LocalTime.now();
+        
+        Date date = new Date();
+        
         Scanner input = new Scanner(System.in);
         System.out.println("-------------------------------------------------------------------------------------------");
         System.out.println("Enter Vital Signs:-");
