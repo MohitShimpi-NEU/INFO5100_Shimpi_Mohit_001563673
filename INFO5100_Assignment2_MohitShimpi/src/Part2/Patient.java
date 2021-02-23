@@ -371,7 +371,7 @@ public class Patient
     {
         Scanner input = new Scanner(System.in);
         System.out.println("");
-        System.out.println("Enter name of below vital sign you want to check is normal");
+        System.out.println("Enter name of below vital sign you want to check is normal:-");
         System.out.println("1)Respiratory Rate 2)Heart Rate 3)Blood Pressure 4)Weight in killos 5)Weight in pounds");
         VSString= input.nextLine();
         
