@@ -5,6 +5,7 @@
  */
 package Part2;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Date;
@@ -21,7 +22,16 @@ public class VitalSigns {
     double bloodpressure;
     double kweight;
     double pweight;
+    String timestamp;
 
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
+    
     public double getRrate() {
         return rrate;
     }
@@ -69,6 +79,8 @@ public class VitalSigns {
         LocalTime myObj1 = LocalTime.now();
         
         Date date = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy h:mm:ss a");
+        timestamp = dateFormat.format(date);
         
         Scanner input = new Scanner(System.in);
         System.out.println("-------------------------------------------------------------------------------------------");
@@ -88,10 +100,7 @@ public class VitalSigns {
         
         System.out.println("-> Enter Weight in Pounds-");
         pweight = input.nextDouble();
-        
-        
-        
-         
+                 
     }
     
     public void DisplayVS()

@@ -616,6 +616,7 @@ public class Patient
                     break;
                     
                 case 3:
+                    list.add(VSObject.getTimestamp());
                     list.add(VSObject.getRrate());
                     list.add(VSObject.getHrate());
                     list.add(VSObject.getBloodpressure());
@@ -625,19 +626,26 @@ public class Patient
                     break;
                 
                 case 4:
+                    System.out.println("");
+                    System.out.println("-------------------------------------------------------------------------------------------");
+                    System.out.println("PATIENT HISTORY:-");
+                    System.out.println("-------------------------------------------------------------------------------------------");
                     PObject.DisplayInfo();
                     int n = list.size();
                     System.out.println("");
+                    System.out.println("-------------------------------------------------------------------------------------------");
                     System.out.println("History of VITAL SIGNS:-");
                     System.out.println("-------------------------------------------------------------------------------------------");
-                    System.out.println("Respiratory Rate    Heart Rate          Blood Pressure      Weight(kg)            Weight(pounds)  ");
                     for (int i = 0; i < n; ++i) 
                     { 
-                        if (i % 5 == 0) 
-                        System.out.println("");
-                        System.out.print(list.get(i) + "                   ");
+                        if (i % 6 == 0){
+                            System.out.println("");
+                            System.out.println("-> Vital Sign "+(i/6+1)+":-");
+                            System.out.println("Time                                  Respiratory Rate    Heart Rate          Blood Pressure      Weight(kg)          Weight(pounds)  ");
+                        }
+                        System.out.print(list.get(i) + "                 ");
                     }
-                    
+                    System.out.println("");
                     
                     break;
                     
