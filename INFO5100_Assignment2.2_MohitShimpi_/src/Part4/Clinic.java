@@ -6,6 +6,7 @@
 package Part4;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 /**
@@ -22,16 +23,21 @@ public class Clinic {
     public  int id=0;
      public void addNewPatient()
     { 
-        Clinic cl = new Clinic();
+        
         int age;
-       
+        String zipcode;
+        String com;
+        
+        String name;
         Patient ps= new Patient();     
         
         id++;
         ps.setPersonId(id);
         
-        System.out.println("Enter patient name-");
-        ps.setName(sc.next());
+        do{System.out.println("Enter patient name-");
+        name=sc.next();
+        }while(!name.matches("^[a-zA-Z]*"));
+        ps.setName(name);
          
         System.out.println("Choose AGE GROUP-");   
         System.out.println("1) Newborn");
@@ -109,24 +115,159 @@ public class Clinic {
         
          System.out.println("");
         System.out.println("Enter Person Address ------->>>");
-        
+      
         System.out.println("Enter patient address-");
           ps.setAddress(sc.next());
-           System.out.println("Enter patient community-");
-          ps.setCommunity(sc.next());
           
+        do{System.out.println("Enter patient community-");
+        com=sc.next();}while(!com.matches("^[a-zA-Z]*"));
+          
+          
+          do{
           System.out.println("Enter patient zipcode-");
-          ps.setZip(sc.nextInt());
+          zipcode= sc.next();
+          }while(!zipcode.matches("[0-9]{5}"));
+          
+          ps.setCommunity(com);
+        
+          ps.setZip(zipcode);
+                  
+          VitalSigns v = new VitalSigns();
         ps.addNewVitalSignEncounter();
+             int status = 0;
+             if(age==1)
+        {
+            if(30<v.getRrate()&&v.getRrate()<50 && 120<v.getHrate()&&v.getHrate()<160 && 50<v.getBloodpressure()&&v.getBloodpressure()<70 && 2<v.getKweight()&&v.getKweight()<3 && 4.5<v.getPweight()&&v.getPweight()<7)//normal condition
+                 status=1;
+            else if(v.getRrate()>50 && v.getHrate()>160 && v.getBloodpressure()>70)//heart rate, bp, respiratory rate  increeases while fever or stress
+            {  
+                status=0;
+            }
+            else if (v.getRrate()<30 && v.getHrate()<120 && 50<v.getBloodpressure()&&v.getBloodpressure()<70)//patient health decompensation- every thing decreases but bp is normal at starting but decreases at last
+            {
+                 status=0;       
+            }
+            else if(v.getHrate()<120)//bradycardia is a slower than normal heart rate
+            {
+                 status=0;
+            }
+            else
+            {   
+                 status=0;
+            }
+        }
         
-      
+        else if(age==2)
+        {
+             if(20<v.getRrate()&&v.getRrate()<30 && 80<v.getHrate()&&v.getHrate()<140 && 70<v.getBloodpressure()&&v.getBloodpressure()<100 && 4<v.getKweight()&&v.getKweight()<10 && 9<v.getPweight()&&v.getPweight()<22)//normal condition
+                 status=1;
+            else if(v.getRrate()>30 && v.getHrate()>140 && v.getBloodpressure()>100)//heart rate, bp, respiratory rate  increeases while fever or stress
+            {  
+                status=0;
+            }
+            else if (v.getRrate()<30 && v.getHrate()<80 && 70<v.getBloodpressure()&&v.getBloodpressure()<100)//patient health decompensation- every thing decreases but bp is normal at starting but decreases at last
+            {
+                 status=0;       
+            }
+            else if(v.getHrate()<100)//bradycardia is a slower than normal heart rate
+            {
+                 status=0;
+            }
+            else
+            {   
+                 status=0;
+            }
+        }
         
+        else if(age==3)
+        {
+             if(20<v.getRrate()&&v.getRrate()<30 && 80<v.getHrate()&&v.getHrate()<130 && 80<v.getBloodpressure()&&v.getBloodpressure()<110 && 10<v.getKweight()&&v.getKweight()<14 && 22<v.getPweight()&&v.getPweight()<31)//normal condition
+                 status=1;
+            else if(v.getRrate()>30 && v.getHrate()>130 && v.getBloodpressure()>110)//heart rate, bp, respiratory rate  increeases while fever or stress
+            {  
+                status=0;
+            }
+            else if (v.getRrate()<20 && v.getHrate()<80 && 80<v.getBloodpressure()&&v.getBloodpressure()<110)//patient health decompensation- every thing decreases but bp is normal at starting but decreases at last
+            {
+                 status=0;       
+            }
+            else if(v.getHrate()<80)//bradycardia is a slower than normal heart rate
+            {
+                 status=0;
+            }
+            else
+            {   
+                 status=0;
+            }
+        }
+        
+        else if(age==4) 
+        { if(20<v.getRrate()&&v.getRrate()<30 && 80<v.getHrate()&&v.getHrate()<120 && 80<v.getBloodpressure()&&v.getBloodpressure()<110 && 10<v.getKweight()&&v.getKweight()<14 && 22<v.getPweight()&&v.getPweight()<31)//normal condition
+                 status=1;
+            else if(v.getHrate()>30 && v.getHrate()>120 && v.getBloodpressure()>110)//heart rate, bp, respiratory rate  increeases while fever or stress
+            {  
+                status=0;
+            }
+            else if (v.getRrate()<20 && v.getHrate()<80 && 80<v.getBloodpressure()&&v.getBloodpressure()<110)//patient health decompensation- every thing decreases but bp is normal at starting but decreases at last
+            {
+                 status=0;       
+            }
+            else if(v.getHrate()<80)//bradycardia is a slower than normal heart rate
+            {
+                 status=0;
+            }
+            else
+            {   
+                 status=0;
+            }
+        }
+        
+        else if(age==5)
+        { if(20<v.getRrate()&&v.getRrate()<30 && 70<v.getHrate()&&v.getHrate()<110 && 80<v.getBloodpressure()&&v.getBloodpressure()<120 && 20<v.getKweight()&&v.getKweight()<42 && 41<v.getPweight()&&v.getPweight()<92)//normal condition
+                 status=1;
+            else if(v.getHrate()>30 && v.getHrate()>110 && v.getBloodpressure()>120)//heart rate, bp, respiratory rate  increeases while fever or stress
+            {  
+                status=0;
+            }
+            else if (v.getRrate()<20 && v.getHrate()<120 && 80<v.getBloodpressure()&&v.getBloodpressure()<120)//patient health decompensation- every thing decreases but bp is normal at starting but decreases at last
+            {
+                 status=0;       
+            }
+            else if(v.getHrate()<70)//bradycardia is a slower than normal heart rate
+            {
+                 status=0;
+            }
+            else
+            {   
+                 status=0;
+            }
+        }
+        
+        else if(age==6)  
+        {
+             if(12<v.getRrate()&&v.getRrate()<20 && 55<v.getHrate()&&v.getHrate()<105 && 110<v.getBloodpressure()&&v.getBloodpressure()<120 && v.getKweight()>50 && v.getPweight()>110)//normal condition
+                 status=1;
+            else if(v.getHrate()>20 && v.getHrate()>105 && v.getBloodpressure()>120)//heart rate, bp, respiratory rate  increeases while fever or stress
+            {  
+                status=0;
+            }
+        
+            else
+            {   
+                 status=0;
+            }
+        }
+        else
+            status=0;
+        
+             ps.setStatuss(status);
         pd.add(ps);
         
         System.out.println("############################");
         System.out.println("Patient assigned id - "+ id);
         System.out.println("############################");
         System.out.println("");
+        
         
     }
      
@@ -136,11 +277,12 @@ public class Clinic {
      
      public void printPatientList()
      {
-      Clinic cl = new Clinic();
         for(Patient ps: pd){
+         
            System.out.print("Patient Id - "+ ps.getPersonId());
            System.out.print("  Patient Name - "+ ps.getName());
            System.out.println("  Patient Age - "+ ps.getAge());
+           //System.out.println("  ++ PATIENT STATUS ++ - "+ status);
            System.out.print("  Patient address - "+ ps.getAddress());
            System.out.print("  Patient community - "+ ps.getCommunity());
           System.out.println("  Patient zipcode - "+ps.getZip());
@@ -219,7 +361,7 @@ public class Clinic {
         for(Patient ps:pd)
         {
             String s = ps.getCommunity();
-            
+           
             if(s.equals(cName))
             {
                 if("Newborn".equals(ps.getAge()))
@@ -255,10 +397,37 @@ public class Clinic {
                 
             }
         }
-         System.out.println(i);    
+         System.out.println("Total number people in the community with blood pressure that is abnormal - "+i);    
              
+    } 
+           private void checkAbnormal() 
+    {
+        HashMap<String, Integer> AbnormalStatus = new HashMap<String, Integer>();
+        int count =1;
+        for(Patient ps:pd)
+        {
+           
+            if(ps.getStatuss()==0)
+            {
+                 if(AbnormalStatus.containsKey(ps.getCommunity())){
+                     
+                     int tmp = AbnormalStatus.get(ps.getCommunity());
+                     
+                     //i++;
+                     AbnormalStatus.replace(ps.getCommunity(), ++tmp);
+                 }
+                     
+                 else{
+                     //i++;
+                AbnormalStatus.put(ps.getCommunity(), count);}
+            }  
+        }
+
+        for (String i : AbnormalStatus.keySet()) {
+         System.out.println("Community: " + i + " Count: " + AbnormalStatus.get(i));
+}
+        
     }
-         
          
      public static void main(String[] args){
         
@@ -300,10 +469,11 @@ public class Clinic {
                     break;
                     
                 case 5:
-                   // cl.checkAbnormalBP();
+                    cl.checkAbnormalBP();
                     break;
                     
                 case 6:
+                    cl.checkAbnormal();
                     break;
                     
                 case 7:

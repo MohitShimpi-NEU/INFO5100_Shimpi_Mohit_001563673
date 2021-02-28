@@ -14,9 +14,26 @@ public class Person {
      String name;
      String age;
     String address;
-    int zip;
-    String Community;
+    String zip;
 
+    public String getZip() {
+        return zip;
+    }
+
+    public void setZip(String zip) {
+        this.zip = zip;
+    }
+    String Community;
+    int statuss;
+
+    public int getStatuss() {
+        return statuss;
+    }
+
+    public void setStatuss(int statuss) {
+        this.statuss = statuss;
+    }
+    
     public String getAddress() {
         return address;
     }
@@ -25,13 +42,7 @@ public class Person {
         this.address = address;
     }
 
-    public int getZip() {
-        return zip;
-    }
 
-    public void setZip(int zip) {
-        this.zip = zip;
-    }
 
     public String getCommunity() {
         return Community;
