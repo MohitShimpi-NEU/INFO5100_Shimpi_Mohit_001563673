@@ -19,11 +19,12 @@ public class Patient extends Person{
     Scanner sc = new Scanner(System.in);
     
     public ArrayList<Encounter> encounterhistory =new ArrayList<Encounter>() ;
-    public ArrayList<City> addresshistory= new ArrayList<City>();
+ 
 
 
     public void addNewVitalSignEncounter(){
        VitalSigns vs=new VitalSigns();
+
        System.out.println("");
        System.out.println("Enter Person Vital Signs  ------->>>");
        
@@ -51,21 +52,7 @@ public class Patient extends Person{
         encounterhistory.add(encounter); 
     }
     
-    public void addressInput()
-    {
-        
-        
-        
-        System.out.println("");
-        System.out.println("Enter Person Address ------->>>");
-        
-        City boston= new City();
-        
-//        Community ck = boston.addcomtoct();
-//        House h= ck.addhtocom();
-//        
-       
-    }
+    
     
     public void printVitalSignList()
     {
@@ -78,18 +65,8 @@ public class Patient extends Person{
             System.out.println("  Weight in pounds - "+ encounterhistory.get(i).getVitalSigns().getPweight());
          }
     }
-//     
-//    public void displayAdrs()
-//    {
-//        for(int i=0;i<addresshistory.size();i++){
-//            System.out.print("Patient Address - "+ addresshistory.get(i).getC().getAddress1());
-//            System.out.print("  Patient Community Name - "+ addresshistory.get(i).getC().getcName());
-//            System.out.print("  Patient Zipcode - "+ addresshistory.get(i).getC().getZip());
-//            System.out.print("  Patient City - "+ addresshistory.get(i).getC().getCity());
-//            System.out.println("  Patient State - "+ addresshistory.get(i).getC().getState());
-//        }
-//        
-//    }
-//    
-          
-}
+     
+       
+        
+    }
+    

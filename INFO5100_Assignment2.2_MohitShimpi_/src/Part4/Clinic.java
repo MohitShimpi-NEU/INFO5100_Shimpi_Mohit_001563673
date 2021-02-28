@@ -17,9 +17,12 @@ public class Clinic {
     Scanner sc =new Scanner(System.in);
     
     public ArrayList<Patient> pd = new ArrayList<Patient>();
+    
+
     public  int id=0;
      public void addNewPatient()
     { 
+        Clinic cl = new Clinic();
         int age;
        
         Patient ps= new Patient();     
@@ -104,8 +107,16 @@ public class Clinic {
                 ps.setAge("Adolescent (13+ years)");
             }
         
-          ps.addressInput();
+         System.out.println("");
+        System.out.println("Enter Person Address ------->>>");
+        
+        System.out.println("Enter patient address-");
+          ps.setAddress(sc.next());
+           System.out.println("Enter patient community-");
+          ps.setCommunity(sc.next());
           
+          System.out.println("Enter patient zipcode-");
+          ps.setZip(sc.nextInt());
         ps.addNewVitalSignEncounter();
         
       
@@ -119,14 +130,20 @@ public class Clinic {
         
     }
      
+
+     
+  
+     
      public void printPatientList()
      {
-      
+      Clinic cl = new Clinic();
         for(Patient ps: pd){
            System.out.print("Patient Id - "+ ps.getPersonId());
            System.out.print("  Patient Name - "+ ps.getName());
            System.out.println("  Patient Age - "+ ps.getAge());
-          // ps.displayAdrs();
+           System.out.print("  Patient address - "+ ps.getAddress());
+           System.out.print("  Patient community - "+ ps.getCommunity());
+          System.out.println("  Patient zipcode - "+ps.getZip());
            ps.printVitalSignList();
            
         }
@@ -189,7 +206,7 @@ public class Clinic {
         }
      }
      
-    private void checkAbnormalBP() 
+   /* private void checkAbnormalBP() 
     {
         int i =0;
         
@@ -200,48 +217,48 @@ public class Clinic {
         System.out.println("Enter the community name of the patient - ");
         String cName = sc.next();
         
-//        for(int j=0; j<pd.size();j++)
-//        {
-          //  String s= ps.addresshistory.get(i).getC().getcName();
+        for(int j=0; j<pd.size();j++)
+        {
+            String s= ps.addresshistory.get(i).getC().getcName();
             
-//            if(s.equals(cName))
-//            {
-//                if("Newborn".equals(ps.getAge()))
-//                {
-//                    if(50>v.getBloodpressure() && v.getBloodpressure()>70);
-//                        i++;
-//                }
-//                else if("Infant(1-12 months)".equals(ps.getAge()))
-//                {
-//                    if(70>v.getBloodpressure() && v.getBloodpressure()>100);
-//                        i++;
-//                }
-//                else if("Todler (1-3 years)".equals(ps.getAge()))
-//                {
-//                    if(80>v.getBloodpressure() && v.getBloodpressure()>110);
-//                        i++;
-//                }
-//                else if("Preschooler (3-5 years)".equals(ps.getAge()))
-//                {
-//                    if(80>v.getBloodpressure() && v.getBloodpressure()>110);
-//                        i++;
-//                }
-//                else if("School Age (6-12 years)".equals(ps.getAge()))
-//                {
-//                    if(80>v.getBloodpressure() && v.getBloodpressure()>120);
-//                        i++;
-//                }
-//                else if("Adolescent (13+ years)".equals(ps.getAge()))
-//                {
-//                    if(110>v.getBloodpressure() && v.getBloodpressure()>120);
-//                        i++;
-//                }
+            if(s.equals(cName))
+            {
+                if("Newborn".equals(ps.getAge()))
+                {
+                    if(50>v.getBloodpressure() && v.getBloodpressure()>70);
+                        i++;
+                }
+                else if("Infant(1-12 months)".equals(ps.getAge()))
+                {
+                    if(70>v.getBloodpressure() && v.getBloodpressure()>100);
+                        i++;
+                }
+                else if("Todler (1-3 years)".equals(ps.getAge()))
+                {
+                    if(80>v.getBloodpressure() && v.getBloodpressure()>110);
+                        i++;
+                }
+                else if("Preschooler (3-5 years)".equals(ps.getAge()))
+                {
+                    if(80>v.getBloodpressure() && v.getBloodpressure()>110);
+                        i++;
+                }
+                else if("School Age (6-12 years)".equals(ps.getAge()))
+                {
+                    if(80>v.getBloodpressure() && v.getBloodpressure()>120);
+                        i++;
+                }
+                else if("Adolescent (13+ years)".equals(ps.getAge()))
+                {
+                    if(110>v.getBloodpressure() && v.getBloodpressure()>120);
+                        i++;
+                }
                 
-//            }
-//        }
-//         System.out.println(i);    
-//             
-    }
+            }
+        }
+         System.out.println(i);    
+             
+    }*/
          
          
      public static void main(String[] args){
@@ -284,7 +301,7 @@ public class Clinic {
                     break;
                     
                 case 5:
-                    cl.checkAbnormalBP();
+                   // cl.checkAbnormalBP();
                     break;
                     
                 case 6:

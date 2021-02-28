@@ -13,23 +13,35 @@ public class Person {
      int personId;
      String name;
      String age;
-    String address1;
-    String cName;
+    String address;
     int zip;
-    String city;
-    String State;
+    String Community;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public int getZip() {
+        return zip;
+    }
+
+    public void setZip(int zip) {
+        this.zip = zip;
+    }
+
+    public String getCommunity() {
+        return Community;
+    }
+
+    public void setCommunity(String Community) {
+        this.Community = Community;
+    }
     
-//    Person(int personId, String name, String age,String address1,  String cName,  int zip,  String city,  String State)
-//    {
-//        this.personId= personId;
-//     this.name= name;
-//     this.age= age;
-//    this.address1= address1;
-//    this.cName= cName;
-//    this.zip= zip;
-//    this.city= city;
-//    this.State= State;
-//    }
+     
     public int getPersonId() {
         return personId;
     }
@@ -53,47 +65,7 @@ public class Person {
     public void setAge(String age) {
         this.age = age;
     }
-
-    public String getAddress1() {
-        return address1;
-    }
-
-    public void setAddress1(String address1) {
-        this.address1 = address1;
-    }
-
-    public String getcName() {
-        return cName;
-    }
-
-    public void setcName(String cName) {
-        this.cName = cName;
-    }
-
-    public int getZip() {
-        return zip;
-    }
-
-    public void setZip(int zip) {
-        this.zip = zip;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getState() {
-        return State;
-    }
-
-    public void setState(String State) {
-        this.State = State;
-    }
-
+    
     
  
 }

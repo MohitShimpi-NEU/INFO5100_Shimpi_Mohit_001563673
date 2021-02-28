@@ -12,8 +12,30 @@ import java.util.ArrayList;
  * @author 16177
  */
 public class House {
+    private String houseAdress;
+    private ArrayList<Patient> houseMembers;
+
+    public House(String houseAdress) {
+        this.houseAdress = houseAdress;
+        houseMembers= new ArrayList<>();
+    }
+
+    public String getHouseAdress() {
+        return houseAdress;
+    }
+
+    public void setHouseAdress(String houseAdress) {
+        this.houseAdress = houseAdress;
+    }
     
-    ArrayList<Patient> house=  new ArrayList<Patient>();
+    public void addPatientInHouse(Patient patient){
+    houseMembers.add(patient);
+    }
+
+    public ArrayList<Patient> getHouseMembers() {
+        return houseMembers;
+    }
+    
     
     
 }
