@@ -206,20 +206,19 @@ public class Clinic {
         }
      }
      
-   /* private void checkAbnormalBP() 
+    private void checkAbnormalBP() 
     {
         int i =0;
-        
-        Community c= new Community();
+
         VitalSigns v = new VitalSigns();
-        Patient ps = new Patient();
+      
         
         System.out.println("Enter the community name of the patient - ");
         String cName = sc.next();
         
-        for(int j=0; j<pd.size();j++)
+        for(Patient ps:pd)
         {
-            String s= ps.addresshistory.get(i).getC().getcName();
+            String s = ps.getCommunity();
             
             if(s.equals(cName))
             {
@@ -258,7 +257,7 @@ public class Clinic {
         }
          System.out.println(i);    
              
-    }*/
+    }
          
          
      public static void main(String[] args){
