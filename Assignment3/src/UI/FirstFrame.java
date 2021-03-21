@@ -12,7 +12,7 @@ import javax.swing.plaf.SplitPaneUI;
 
 /**
  *
- * @author 16177
+ * @author mohitshimpi
  */
 public class FirstFrame extends javax.swing.JFrame {
 
@@ -84,7 +84,7 @@ public class FirstFrame extends javax.swing.JFrame {
 
         studentLoginButton.setBackground(new java.awt.Color(255, 255, 255));
         studentLoginButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        studentLoginButton.setText("STUDEN LOGIN");
+        studentLoginButton.setText("STUDENT LOGIN");
         studentLoginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 studentLoginButtonActionPerformed(evt);
@@ -97,7 +97,7 @@ public class FirstFrame extends javax.swing.JFrame {
         facultyLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/dashboard.jpg"))); // NOI18N
         facultyLabel.setText("jLabel1");
 
-        studentLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/dashboard.png"))); // NOI18N
+        studentLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/student.jpg"))); // NOI18N
         studentLabel.setText("jLabel1");
 
         homeButton.setBackground(new java.awt.Color(255, 255, 255));
@@ -157,7 +157,7 @@ public class FirstFrame extends javax.swing.JFrame {
                         .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(studentLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         leftJPanelLayout.setVerticalGroup(
             leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,11 +176,15 @@ public class FirstFrame extends javax.swing.JFrame {
                 .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(facultyLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(facultyLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(studentLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(studentLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
+                .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(leftJPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                        .addComponent(studentLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(46, 46, 46))
+                    .addGroup(leftJPanelLayout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(studentLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(exitLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))

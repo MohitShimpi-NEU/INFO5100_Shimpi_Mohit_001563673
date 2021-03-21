@@ -10,7 +10,7 @@ import javax.swing.JSplitPane;
 
 /**
  *
- * @author 16177
+ * @author mohitshimpi
  */
 public class facultyLoginPanel extends javax.swing.JPanel {
 

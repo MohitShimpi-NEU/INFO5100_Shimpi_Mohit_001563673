@@ -9,7 +9,7 @@ import UniversityModel.MainClass;
 
 /**
  *
- * @author 16177
+ * @author mohitshimpi
  */
 public class homePanel extends javax.swing.JPanel {
 
