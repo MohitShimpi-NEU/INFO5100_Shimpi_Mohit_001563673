@@ -6,6 +6,7 @@
 package UI;
 
 import UniversityModel.MainClass;
+import javax.swing.JOptionPane;
 import javax.swing.JSplitPane;
 
 /**
@@ -143,15 +144,26 @@ public class adminLoginPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        String x;
+        String y;
+        x= jTextField1.getText();
+        y=jPasswordField1.getText();
         
-        adminControlPanel adminControl = new adminControlPanel(main);
-        temp.setRightComponent(adminControl);
+        if (x.equals("admin")&&y.equals("admin"))
+        {
+        adminControlPanel adminControl = new adminControlPanel(main,temp);
+        temp.setRightComponent(adminControl);}
+        else {
+             JOptionPane.showMessageDialog(this, "Wong Credentials");
+        }
+        
         
        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

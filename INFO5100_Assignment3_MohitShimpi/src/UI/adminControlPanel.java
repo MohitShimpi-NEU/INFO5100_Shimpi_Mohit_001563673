@@ -6,6 +6,7 @@
 package UI;
 
 import UniversityModel.MainClass;
+import javax.swing.JSplitPane;
 
 
 /**
@@ -19,9 +20,10 @@ public class adminControlPanel extends javax.swing.JPanel {
      */
 
         MainClass main;
-        
-    public adminControlPanel(MainClass main) {
+        JSplitPane temp;
+    public adminControlPanel(MainClass main, JSplitPane S) {
         main = new MainClass() ;
+        this.temp =S;
         initComponents();
     }
 
@@ -50,6 +52,7 @@ public class adminControlPanel extends javax.swing.JPanel {
         jButton10 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(153, 153, 153));
@@ -98,6 +101,7 @@ public class adminControlPanel extends javax.swing.JPanel {
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton5.setText("DELETE");
 
+        jButton10.setBackground(new java.awt.Color(0, 0, 0));
         jButton10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/dashboard.png"))); // NOI18N
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -117,6 +121,14 @@ public class adminControlPanel extends javax.swing.JPanel {
             }
         });
 
+        jButton11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton11.setText("LOGOUT");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -124,8 +136,8 @@ public class adminControlPanel extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton11)
                     .addComponent(jLabel4)
-                    .addComponent(jButton8)
                     .addComponent(jButton2)
                     .addComponent(jButton9)
                     .addComponent(jLabel2)
@@ -137,9 +149,9 @@ public class adminControlPanel extends javax.swing.JPanel {
                     .addComponent(jButton5)
                     .addComponent(jButton6)
                     .addComponent(jLabel1)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jButton10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -169,11 +181,13 @@ public class adminControlPanel extends javax.swing.JPanel {
                 .addComponent(jButton2)
                 .addGap(18, 18, 18)
                 .addComponent(jButton8)
-                .addGap(51, 51, 51)
-                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
-                .addContainerGap(417, Short.MAX_VALUE))
+                .addGap(40, 40, 40)
+                .addComponent(jButton11)
+                .addContainerGap(364, Short.MAX_VALUE))
         );
 
         adminSplitPane.setLeftComponent(jPanel1);
@@ -225,11 +239,18 @@ public class adminControlPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_jButton10ActionPerformed
 
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        homePanel hp = new homePanel(main);
+        temp.setRightComponent(hp);
+    }//GEN-LAST:event_jButton11ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JSplitPane adminSplitPane;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

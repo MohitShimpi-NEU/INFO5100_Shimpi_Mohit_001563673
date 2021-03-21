@@ -47,9 +47,7 @@ public class FirstFrame extends javax.swing.JFrame {
         adminLabel = new javax.swing.JLabel();
         facultyLabel = new javax.swing.JLabel();
         studentLabel = new javax.swing.JLabel();
-        homeButton = new javax.swing.JButton();
         exitButton = new javax.swing.JButton();
-        homeLabel = new javax.swing.JLabel();
         exitLabel = new javax.swing.JLabel();
         rightJPanel = new javax.swing.JPanel();
         mainImageLabel = new javax.swing.JLabel();
@@ -100,15 +98,6 @@ public class FirstFrame extends javax.swing.JFrame {
         studentLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/student.jpg"))); // NOI18N
         studentLabel.setText("jLabel1");
 
-        homeButton.setBackground(new java.awt.Color(255, 255, 255));
-        homeButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        homeButton.setText("HOME");
-        homeButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                homeButtonActionPerformed(evt);
-            }
-        });
-
         exitButton.setBackground(new java.awt.Color(255, 255, 255));
         exitButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         exitButton.setText("EXIT");
@@ -117,9 +106,6 @@ public class FirstFrame extends javax.swing.JFrame {
                 exitButtonActionPerformed(evt);
             }
         });
-
-        homeLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home-icon-1624792.jpg"))); // NOI18N
-        homeLabel.setText("jLabel1");
 
         exitLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/exit.png"))); // NOI18N
         exitLabel.setText("jLabel1");
@@ -141,13 +127,9 @@ public class FirstFrame extends javax.swing.JFrame {
                         .addComponent(facultyLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(leftJPanelLayout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(adminLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(homeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(adminLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(homeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(adminLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(adminLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(leftJPanelLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -164,11 +146,7 @@ public class FirstFrame extends javax.swing.JFrame {
             .addGroup(leftJPanelLayout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addComponent(iconLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
-                .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(homeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(homeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
+                .addGap(50, 50, 50)
                 .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(adminLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(adminLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -178,17 +156,17 @@ public class FirstFrame extends javax.swing.JFrame {
                     .addComponent(facultyLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(leftJPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                        .addGap(45, 45, 45)
                         .addComponent(studentLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(46, 46, 46))
+                        .addGap(45, 45, 45))
                     .addGroup(leftJPanelLayout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addComponent(studentLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(exitLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(151, Short.MAX_VALUE))
         );
 
         mainSplitPane.setLeftComponent(leftJPanel);
@@ -244,12 +222,6 @@ public class FirstFrame extends javax.swing.JFrame {
          mainSplitPane.setRightComponent(studentLogin);
     }//GEN-LAST:event_studentLoginButtonActionPerformed
 
-    private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed
-        // TODO add your handling code here:
-        homePanel hp = new homePanel(product);
-        mainSplitPane.setRightComponent(hp);
-    }//GEN-LAST:event_homeButtonActionPerformed
-
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
 //        // TODO add your handling code here:
         
@@ -298,8 +270,6 @@ public class FirstFrame extends javax.swing.JFrame {
     private javax.swing.JLabel exitLabel;
     private javax.swing.JLabel facultyLabel;
     private javax.swing.JButton facultyLoginButton;
-    private javax.swing.JButton homeButton;
-    private javax.swing.JLabel homeLabel;
     private javax.swing.JLabel iconLabel;
     private javax.swing.JPanel leftJPanel;
     private javax.swing.JLabel mainImageLabel;
