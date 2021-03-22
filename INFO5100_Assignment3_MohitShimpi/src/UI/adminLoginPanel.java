@@ -5,7 +5,7 @@
  */
 package UI;
 
-import UniversityModel.MainClass;
+import ClassForUI.MainClass;
 import javax.swing.JOptionPane;
 import javax.swing.JSplitPane;
 

@@ -5,7 +5,7 @@
  */
 package UI;
 
-import UniversityModel.MainClass;
+import ClassForUI.MainClass;
 
 /**
  *

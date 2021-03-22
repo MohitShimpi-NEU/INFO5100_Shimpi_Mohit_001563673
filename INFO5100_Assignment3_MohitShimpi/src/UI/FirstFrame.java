@@ -5,7 +5,7 @@
  */
 package UI;
 
-import UniversityModel.MainClass;
+import ClassForUI.MainClass;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import javax.swing.plaf.SplitPaneUI;
