@@ -21,9 +21,9 @@ public class Person {
     
     public Person (String name,String id,String password){
         
-        this.id = "admin";
-           this.password="admin";
-           this.name="admin";
+        this.id = id;
+           this.password=password;
+           this.name=name;
     }
     public String getPersonId(){
         return id;
