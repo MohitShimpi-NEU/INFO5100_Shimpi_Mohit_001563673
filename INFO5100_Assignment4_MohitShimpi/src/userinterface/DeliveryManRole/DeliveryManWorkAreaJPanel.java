@@ -46,7 +46,8 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
         model.setRowCount(0);
         for (Order order : business.getOrderDirectory().getOrderDirectory()) {
-            if (order.getOrderStatus() != null && order.getOrderStatus().equals("Order Ready for Pick up")) {
+//            if (order.getOrderStatus() != null && order.getOrderStatus().equals("Order Ready for Pick up")) {
+if (order.getOrderStatus() != null && order.getOrderStatus().equals("Order Assigned")) {
                 Object[] row = new Object[7];
                 row[0] = order;
                 row[1] = order.getMessage();
