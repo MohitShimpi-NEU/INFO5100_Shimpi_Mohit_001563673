@@ -26,6 +26,7 @@ public class Order extends WorkRequest {
     private Menu menu;
     private String result;
     private boolean assign;
+    private int totalprice;
 
     public boolean isAssign() {
         return assign;
@@ -33,6 +34,14 @@ public class Order extends WorkRequest {
 
     public void setAssign(boolean assign) {
         this.assign = assign;
+    }
+
+    public int getTotalprice() {
+        return totalprice;
+    }
+
+    public void setTotalprice(int totalprice) {
+        this.totalprice = totalprice;
     }
     
     

@@ -219,21 +219,21 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     private void btnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerActionPerformed
 
         ManageCustomerJPanel mcjp = new ManageCustomerJPanel(userProcessContainer, ecosystem, customerDirectory);
-        userProcessContainer.add("ManageCustomersJPanel",mcjp);
+        userProcessContainer.add(mcjp);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnCustomerActionPerformed
 
     private void btnRestaurantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestaurantActionPerformed
         ManageRestaurantJPanel mrjp = new ManageRestaurantJPanel(userProcessContainer, ecosystem, restaurantDirectory);
-        userProcessContainer.add("ManageRestaurantJPanel",mrjp);
+        userProcessContainer.add(mrjp);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnRestaurantActionPerformed
 
     private void btnDeliveryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeliveryActionPerformed
        ManageDeliveryManJPanel mdmjp = new ManageDeliveryManJPanel(userProcessContainer, ecosystem, deliveryManDirectory);
-       userProcessContainer.add("ManageDeliveryManJPanel", mdmjp);
+       userProcessContainer.add( mdmjp);
        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnDeliveryActionPerformed

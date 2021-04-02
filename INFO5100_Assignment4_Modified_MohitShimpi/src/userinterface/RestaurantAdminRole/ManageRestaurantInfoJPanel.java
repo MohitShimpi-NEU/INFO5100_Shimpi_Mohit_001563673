@@ -170,7 +170,7 @@ public class ManageRestaurantInfoJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRow = tblRestaurant.getSelectedRow();
         if(selectedRow < 0) {
-            JOptionPane.showMessageDialog(null,"Please Select a row from table first", "Warining", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Please Select a row from table first", "warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         Restaurant restaurant = (Restaurant)tblRestaurant.getValueAt(selectedRow,0);
