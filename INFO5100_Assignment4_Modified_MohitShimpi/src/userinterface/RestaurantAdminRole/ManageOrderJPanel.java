@@ -53,10 +53,11 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
             if(account.getEmployee().getName().equals(order.getRestaurant().getRestaurantName())) {
                 Object [] row = new Object[5];
                 row[0] = order;
-                row[1] = order.getMenu().getItemName();
-                row[2] = order.getQuantity();
-                row[3] = order.getQuantity() * order.getMenu().getPrice();
+                row[1] = order.getMessage();
+                row[2] = order.getCustomer().getName();
+                row[3] = order.getQuantity();
                 row[4] = order.getOrderStatus();
+               
                 dtm.addRow(row);
             }
         }
@@ -108,7 +109,7 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Order ID", "Item Name", "Quantity", "Price", "Order Status"
+                "Order ID", "Message", "Reciever", "Price", "Order Status"
             }
         ));
         jScrollPane1.setViewportView(tblOrder);

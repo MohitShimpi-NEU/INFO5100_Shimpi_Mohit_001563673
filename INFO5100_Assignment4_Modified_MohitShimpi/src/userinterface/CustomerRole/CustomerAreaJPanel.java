@@ -98,7 +98,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         for (Order order : ecoSystem.getOrderDirectory().getOrderDirectory()){
             if(account.getEmployee().getName().equals(order.getCustomer().getName())) {
                 Object[] row = new Object[5];
-                row[0] = order.getOrderId();
+                row[0] = order;
                 row[1]=order.getMessage();
                 row[2] = order.getCustomer().getName();
                 row[3] = order.getOrderStatus();
